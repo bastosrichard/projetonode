@@ -1,0 +1,39 @@
+<h1>Seja bem vindo(a)</h1>
+<p>Mensagem qualquer</p>
+
+{{! //funciona como se fosse um if, caso verdadeiro exibe}}
+
+{{#mostrar}}
+  <p>Nome: {{nome}}</p>
+ {{/mostrar}}
+
+
+ 
+{{! //lista o array com cada item dos objetos }}
+
+<ul>
+  {{#ingredientes}}
+    <li>{{nome}} - {{qt}}</li>
+  {{/ingredientes}}
+</ul>
+
+<hr/>
+
+
+{{! //lista o array completo por nao ter objeto(tipo um map)  }}
+
+<ul>
+{{#interesses}}
+  <li>{{.}}</li>
+{{/interesses}}
+</ul>
+{{! caso a lista não tenha ingredientes,exibe a mensagem}}
+{{^ingredientes}}
+  <p>Nenhum ingrediente</p>
+{{/ingredientes}}
+
+
+<hr/>
+
+{{! para usar HTML precisa usar 3 chaves }}
+{{{testeHTML}}}

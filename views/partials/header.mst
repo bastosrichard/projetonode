@@ -1,0 +1,57 @@
+<html lang="pt-br">
+  <head>
+    {{#pageTitle}}
+    <title>{{ pageTitle }}</title>
+    {{/pageTitle}}
+
+    {{^pageTitle}}
+    <title>{{ h.defaultPageTitle}}</title>
+    {{/pageTitle}}
+
+    <link rel="stylesheet" href="/assets/css/template.css" />
+  </head>
+</html>
+<header>
+  <h1>CABECALHO</h1>
+  
+  {{#user}}
+     Ola, {{user.name}}! 
+    <a href="/users/logout">Sair</a>
+
+  {{/user}}
+
+{{#flashes}}
+  <hr/>
+  <ul>
+    {{#h.menu}}
+    <li>
+      <a href="{{ slug }}">{{ name }}</a>
+    </li>
+    {{/h.menu}}
+  </ul>
+</header>
+
+<!-- MENSAGENS FLASH PARA QUANDO É ADICIONADO POST -->
+
+
+
+  {{#success}}
+  <div class="warning">
+    {{.}}
+  </div>
+  {{/success}}
+
+  {{#error}}
+  <div class="warning">
+    {{.}}
+  </div>
+  {{/error}}
+
+  {{#info}}
+  <div class="warning">
+    {{.}}
+  </div>
+  {{/info}}
+
+
+{{/flashes}}
